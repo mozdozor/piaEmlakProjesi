@@ -20,4 +20,5 @@ public class User {
     private List<Advertisement> advertisements;
 
 
+
 }
