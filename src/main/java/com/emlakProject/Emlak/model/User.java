@@ -7,17 +7,20 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
+
+
+
 @Document
 @Data
-@AllArgsConstructor
 public class User {
     @Id
     private String id;
     private String name;
     private String lastname;
+    private String password;
     private String phoneNumber;
     private String email;
-    private List<Advertisement> advertisements;
+
 
 
 

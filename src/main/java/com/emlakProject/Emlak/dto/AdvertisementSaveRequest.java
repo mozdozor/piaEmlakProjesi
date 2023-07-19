@@ -1,22 +1,24 @@
-package com.emlakProject.Emlak.model;
+package com.emlakProject.Emlak.dto;
 
-import ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Generated;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Document
-@Data
-public class Advertisement {
 
-    @Id
-    private String id;
+@Getter
+@Setter
+public class AdvertisementSaveRequest {
+
+//    private String name;
+//    private String lastName;
+//    private String phoneNumber;
+//    private String email;
 
     private String advertisementType; //İlan tipi Satılık-Kiralık
     private String estateType; // daire-iş yeri
@@ -34,11 +36,9 @@ public class Advertisement {
     private String heatingType;
     private Boolean isFurniture;
 
-    //    private List<String> photos;
+//    private List<String> photos;
     private LocalDateTime createdDate;
     private String user_id;
-
-
 
 
 
