@@ -16,6 +16,7 @@ public class UserResponse {
     private String lastName;
     private String name;
     private String email;
+    private Boolean isSuccess;
 
 
 }

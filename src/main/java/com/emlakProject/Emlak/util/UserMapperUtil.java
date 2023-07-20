@@ -19,6 +19,7 @@ public class UserMapperUtil {
         user.setLastname(userSaveRequest.getLastName());
         user.setEmail(userSaveRequest.getEmail());
         user.setPassword(userSaveRequest.getPassword());
+        user.setPhoneNumber(userSaveRequest.getPhone());
 
 
         return user;
@@ -30,7 +31,7 @@ public class UserMapperUtil {
         userResponse.setName(user.getName());
         userResponse.setLastName(user.getLastname());
         userResponse.setEmail(user.getEmail());
-
+        userResponse.setIsSuccess(true);
         return userResponse;
     }
 

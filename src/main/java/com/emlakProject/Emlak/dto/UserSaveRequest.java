@@ -16,4 +16,6 @@ public class UserSaveRequest {
 
     private String password;
 
+    private String phone;
+
 }
