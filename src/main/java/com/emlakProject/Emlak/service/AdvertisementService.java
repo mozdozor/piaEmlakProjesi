@@ -3,6 +3,7 @@ package com.emlakProject.Emlak.service;
 import com.emlakProject.Emlak.dto.AdvDetailDTO;
 import com.emlakProject.Emlak.dto.AdvertisementSaveRequest;
 import com.emlakProject.Emlak.dto.AdvertisementSaveResponse;
+import com.emlakProject.Emlak.dto.HomeAdvertisementResponse;
 import com.emlakProject.Emlak.exception.DefaultExceptionMessage;
 import com.emlakProject.Emlak.exception.GeneralMessageResponse;
 import com.emlakProject.Emlak.model.Advertisement;
@@ -12,6 +13,7 @@ import com.emlakProject.Emlak.repository.UserRepository;
 import com.emlakProject.Emlak.util.AdvertisementMapperUtil;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,11 +37,16 @@ public class AdvertisementService {
         return advertisementRepository.findAll();
     }
 
-    public List<Advertisement> gelLastTenAdvertisements() {
+    public List<HomeAdvertisementResponse> gelLastTenAdvertisements() {
 
         List<Advertisement> allAdvertisements =  advertisementRepository.findAllByOrderByCreatedDateDesc();
         int endIndex = Math.min(10, allAdvertisements.size());
-        return allAdvertisements.subList(0, endIndex);
+        List<Advertisement> newList =allAdvertisements.subList(0, endIndex);
+        List<HomeAdvertisementResponse> newList1 = new ArrayList<>();
+        for(int i=0; i< newList.size(); i++){
+            newList1.add(AdvertisementMapperUtil.toAdvertisementHomeResponse(newList.get(i)));
+        }
+        return  newList1;
 
     }
 

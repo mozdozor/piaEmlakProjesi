@@ -77,4 +77,17 @@ public class AdvertisementMapperUtil {
         return advertisementDetailResponse;
     }
 
+    public static HomeAdvertisementResponse toAdvertisementHomeResponse(Advertisement advertisement) {
+        HomeAdvertisementResponse advertisementHomeResponse = new HomeAdvertisementResponse();
+        advertisementHomeResponse.setTitle(advertisement.getTitle());
+        advertisementHomeResponse.setCity(advertisement.getCity());
+        advertisementHomeResponse.setPrice(advertisement.getPrice());
+        advertisementHomeResponse.setPhoto(advertisement.getFirstImagePath());
+        advertisementHomeResponse.setId(advertisement.getId());
+
+
+
+        return advertisementHomeResponse;
+    }
+
 }

@@ -9,8 +9,9 @@ import java.util.List;
 @Setter
 public class HomeAdvertisementResponse {
 
+    private String id;
     private String photo;
     private String city;
     private String title;
-    private String price;
+    private double price;
 }

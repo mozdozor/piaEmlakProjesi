@@ -17,7 +17,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api")
-@CrossOrigin
 public class AdvertisementController {
 
     @Autowired
@@ -32,7 +31,7 @@ public class AdvertisementController {
 
 
     @GetMapping(value = "/getLastTenAdvertisement")
-    public List<Advertisement> getLastTenAdvertisement() {
+    public List<HomeAdvertisementResponse> getLastTenAdvertisement() {
 
         return advertisementService.gelLastTenAdvertisements();
     }
