@@ -41,6 +41,7 @@ public class UserMapperUtil {
         userLoginResponse.setLastname(user.getLastname());
         userLoginResponse.setEmail(user.getEmail());
         userLoginResponse.setPhoneNumber(user.getPhoneNumber());
+        userLoginResponse.setUser_id(user.getId());
 //        userLoginResponse.setAdvertisements(user.getAdvertisements());
         userLoginResponse.setLoginSuccess(true);
 

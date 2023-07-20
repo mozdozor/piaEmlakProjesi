@@ -11,6 +11,7 @@ import java.util.List;
 @Setter
 public class UserLoginResponse {
 
+    private String user_id;
     private String name;
     private String lastname;
     private String phoneNumber;
