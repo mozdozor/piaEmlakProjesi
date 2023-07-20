@@ -17,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api")
+@CrossOrigin
 public class AdvertisementController {
 
     @Autowired
@@ -27,6 +28,13 @@ public class AdvertisementController {
     public List<Advertisement> getAllAdvertisement() {
 
         return advertisementService.gelAllAdvertisement();
+    }
+
+
+    @GetMapping(value = "/getLastTenAdvertisement")
+    public List<Advertisement> getLastTenAdvertisement() {
+
+        return advertisementService.gelLastTenAdvertisements();
     }
 
 
@@ -48,7 +56,7 @@ public class AdvertisementController {
     }
 
 
-    @PostMapping (value = "/deleteAdvertisement/{id}")
+    @DeleteMapping (value = "/deleteAdvertisement/{id}")
     public GeneralMessageResponse deleteAdvertisement(@PathVariable String id) {
 
         return advertisementService.deleteAdvertisement(id);

@@ -10,7 +10,7 @@ import java.util.List;
 public interface AdvertisementRepository extends MongoRepository<Advertisement, String> {
 
 
-
+        List <Advertisement> findAllByOrderByCreatedDateDesc();
 //
 //    Advertisement findAdvertisementAll();
 //    Advertisement findAdvertisementByCityIs(String city);

@@ -35,6 +35,15 @@ public class AdvertisementService {
         return advertisementRepository.findAll();
     }
 
+    public List<Advertisement> gelLastTenAdvertisements() {
+
+        List<Advertisement> allAdvertisements =  advertisementRepository.findAllByOrderByCreatedDateDesc();
+        int endIndex = Math.min(10, allAdvertisements.size());
+        return allAdvertisements.subList(0, endIndex);
+
+    }
+
+
 
     public AdvertisementSaveResponse save(AdvertisementSaveRequest request) {
         Advertisement advertisement = AdvertisementMapperUtil.toAdvertisement(request);
