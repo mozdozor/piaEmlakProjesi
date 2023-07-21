@@ -17,14 +17,29 @@ public class AdvertisementMapperUtil {
     public static Advertisement toAdvertisement(AdvertisementSaveRequest advertisementSaveRequest) {
         Advertisement advertisement = new Advertisement();
 
+        String path1 = advertisementSaveRequest.getFirstImagePath();
+        String path2 = advertisementSaveRequest.getSecondImagePath();
+        String path3 = advertisementSaveRequest.getThirdImagePath();
+
+        String[] parts1 = path1.split("\\\\");
+        String[] parts2 = path2.split("\\\\");
+        String[] parts3 = path3.split("\\\\");
+
+
+        String image1 = parts1[parts1.length - 1];
+        String image2 = parts2[parts2.length - 1];
+        String image3 = parts3[parts3.length - 1];
+
+
+
 
         advertisement.setAdvertisementType(advertisementSaveRequest.getAdvertisementType());
         advertisement.setEstateType(advertisementSaveRequest.getEstateType());
         advertisement.setTitle(advertisementSaveRequest.getTitle());
         advertisement.setAdvContent(advertisementSaveRequest.getAdvContent());
-        advertisement.setFirstImagePath(advertisementSaveRequest.getFirstImagePath());
-        advertisement.setSecondImagePath(advertisementSaveRequest.getSecondImagePath());
-        advertisement.setThirdImagePath(advertisementSaveRequest.getThirdImagePath());
+        advertisement.setFirstImagePath(image1);
+        advertisement.setSecondImagePath(image2);
+        advertisement.setThirdImagePath(image3);
         advertisement.setPrice(advertisementSaveRequest.getPrice());
         advertisement.setSize(advertisementSaveRequest.getSize());
         advertisement.setCity(advertisementSaveRequest.getCity());
