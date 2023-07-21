@@ -6,6 +6,8 @@ import com.emlakProject.Emlak.model.User;
 import com.emlakProject.Emlak.repository.AdvertisementRepository;
 import com.emlakProject.Emlak.repository.UserRepository;
 import com.emlakProject.Emlak.service.UserService;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import java.time.LocalDateTime;
 

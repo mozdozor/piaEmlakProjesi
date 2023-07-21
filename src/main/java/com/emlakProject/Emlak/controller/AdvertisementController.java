@@ -55,6 +55,13 @@ public class AdvertisementController {
     }
 
 
+    @GetMapping(value = "/getUserAdvertisements/{id}")
+    public List<HomeAdvertisementResponse> getUserAdvertisements(@PathVariable String id) {
+
+        return advertisementService.getUserAdvirtesements(id);
+    }
+
+
     @DeleteMapping (value = "/deleteAdvertisement/{id}")
     public GeneralMessageResponse deleteAdvertisement(@PathVariable String id) {
 

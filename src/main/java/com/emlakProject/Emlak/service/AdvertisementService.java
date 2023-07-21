@@ -51,6 +51,22 @@ public class AdvertisementService {
     }
 
 
+    public List<HomeAdvertisementResponse> getUserAdvirtesements(String id) {
+
+        List<Advertisement> allAdvertisements =  advertisementRepository.findAll();
+
+        List<HomeAdvertisementResponse> newList1 = new ArrayList<>();
+        for(int i=0; i< allAdvertisements.size(); i++){
+            if(allAdvertisements.get(i).getUser_id().equals(id)){
+                newList1.add(AdvertisementMapperUtil.toAdvertisementHomeResponse(allAdvertisements.get(i)));
+
+            }
+        }
+        return  newList1;
+
+    }
+
+
 
     public AdvertisementSaveResponse save(AdvertisementSaveRequest request) {
         Advertisement advertisement = AdvertisementMapperUtil.toAdvertisement(request);
